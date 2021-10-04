@@ -1,6 +1,6 @@
 package com.geetanjali.twtdw;
 //import com.geetanjali.twtdw.health.HealthCheckup;
-import com.geetanjali.twtdw.resources.Resource;
+import com.geetanjali.twtdw.resources.Resources;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -24,7 +24,7 @@ public class TwitterDropWizardApplication extends Application<TwitterDropWizardC
     @Override
     public void run(final TwitterDropWizardConfiguration configuration,
                     final Environment environment) {
-        final Resource resource = new Resource(configuration.getMessage());
+        final Resources resource = new Resources(configuration.getMessage());
        // final HealthCheckup healthCheck =
         //        new HealthCheckup(configuration.getTemplate());
         // environment.healthChecks().register("template", healthCheck);

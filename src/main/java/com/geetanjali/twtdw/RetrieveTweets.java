@@ -15,18 +15,10 @@ public class RetrieveTweets
         this.statuses = new ArrayList<Status>();
     }
 
-    public List<String> getStatus(Twitter twitter) throws TwitterException
+    public List<Status> getStatus(Twitter twitter) throws TwitterException
     {
         Paging page = new Paging(1,200);
         statuses.addAll(twitter.getHomeTimeline(page));
-        int count = statuses.size();
-        List<String> str = new ArrayList<String>();
-        while(count > 0)
-        {
-            count--;
-            System.out.println("Tweet "+count+"="+statuses.get(count).getText());
-            str.add(statuses.get(count).getText());
-        }
-        return str;
+        return statuses;
     }
 }
